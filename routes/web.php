@@ -17,4 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'IndexController@index')->name('index');
 Route::get('/getreq', 'GetReqController@index')->name('getrequests');
+Route::get('/getall', 'GetReqController@getAllPosts')->name('getallposts');
+
+
+
 Route::get('/postreq', 'PostReqController@index')->name('postrequests');
+

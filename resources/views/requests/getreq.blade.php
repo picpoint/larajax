@@ -11,5 +11,16 @@
 
     <h3>Get Requests</h3>
 
+    <img src="public/pict/internet.jpg" alt="internet">
+
+    <form method="get">
+        <button type="submit" class="btnallposts">Получить посты</button>
+    </form>
+
+    <div class="allposts">
+
+    </div>
+
+<script src="public/js/getPostsAjax.js"></script>
 </body>
 </html>

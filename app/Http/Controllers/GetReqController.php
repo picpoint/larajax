@@ -12,6 +12,10 @@ class GetReqController extends Controller
     }
 
 
+
+    public function getAllPosts(Request $request) {
+        dd($request);
+    }
      
 
 
