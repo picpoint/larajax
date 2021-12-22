@@ -11,4 +11,8 @@ class GetReqController extends Controller
         return view('requests.getreq');
     }
 
+
+     
+
+
 }
