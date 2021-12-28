@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GetReqController extends Controller
 {
@@ -14,7 +15,9 @@ class GetReqController extends Controller
 
 
     public function getAllPosts(Request $request) {
-        dd($request);
+        $datas = DB::table('posts')->get();
+
+        return $datas;
     }
      
 
