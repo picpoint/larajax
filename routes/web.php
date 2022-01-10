@@ -20,6 +20,5 @@ Route::get('/getreq', 'GetReqController@index')->name('getrequests');
 Route::get('/getall', 'GetReqController@getAllPosts')->name('allposts');
 
 
-
 Route::get('/postreq', 'PostReqController@index')->name('postrequests');
-
+Route::post('/postreq', 'PostReqController@recPost')->name('recpost');

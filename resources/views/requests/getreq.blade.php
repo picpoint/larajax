@@ -41,9 +41,9 @@
             }
 
             for (var key in alldatas) {
-                console.log(alldatas[key].title);
-                console.log(alldatas[key].content);
-                console.log("");
+//                console.log(alldatas[key].title);
+//                console.log(alldatas[key].content);
+//                console.log("");
 
                 let b = document.createElement('b');
                 let span = document.createElement('span');
