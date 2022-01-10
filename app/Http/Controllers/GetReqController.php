@@ -15,9 +15,7 @@ class GetReqController extends Controller
 
 
     public function getAllPosts(Request $request) {
-        $datas = DB::table('posts')->get();
-
-        return $datas;
+        return DB::table('posts')->get();
     }
      
 

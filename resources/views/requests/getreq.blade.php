@@ -17,61 +17,53 @@
     <button type="submit" class="btnallposts">Получить посты</button>
 </form>
 
-<div class="allposts">
-    {{--@if(isset($allposts) && $allposts != '')--}}
-        {{--@foreach($allposts as $post)--}}
-            {{--<b>{{ $post->title }}</b>--}}
-            {{--<span>{{ $post->content }}</span>--}}
-            {{--<br><br>--}}
-        {{--@endforeach--}}
-    {{--@endif--}}
+<div class="posts">
+
 </div>
 
-{{--<script src="public/js/getPostsAjax.js"></script>--}}
 
 <script>
-    let btn = document.querySelector('.btnallposts');
-    let allposts = document.querySelector('.allposts');
 
+    let btn = document.querySelector('.btnallposts');
+    let blockposts = document.querySelector('.posts');
 
     btn.addEventListener('click', function (e) {
         e.preventDefault();
+        let alldatas = '';
 
-        console.log('btn click');
-
-        const xhr = new XMLHttpRequest();
-        xhr.open("GET", "{{ route('allpst') }}");
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
-        xhr.addEventListener('readystatechange', function () {
+        var xhr = new XMLHttpRequest();
+        const url = "{{ route('allposts') }}";
+        xhr.open("GET", url);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-url');
+        xhr.addEventListener("readystatechange", function () {
             if (xhr.readyState == 4 && xhr.status == 200) {
-                let alldatas = xhr.responseText;
-                let objDatas = JSON.parse(alldatas);
-
-                for (let key in objDatas) {
-                    console.log(objDatas[key].title);
-                    console.log(objDatas[key].content);
-                    console.log("");
-                }
-
+                alldatas = JSON.parse(xhr.responseText);
             }
 
+            for (var key in alldatas) {
+                console.log(alldatas[key].title);
+                console.log(alldatas[key].content);
+                console.log("");
 
+                let b = document.createElement('b');
+                let span = document.createElement('span');
+                let br = document.createElement("br");
 
-            
+                b.innerHTML = alldatas[key].title;
+                span.innerHTML = alldatas[key].content;
+                blockposts.appendChild(b);
+                blockposts.appendChild(br);
+                blockposts.appendChild(span);
+            }
 
         });
 
         xhr.send();
 
-
-
     });
 
 
-
 </script>
-
 
 
 </body>
