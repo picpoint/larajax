@@ -48,12 +48,16 @@
                 let b = document.createElement('b');
                 let span = document.createElement('span');
                 let br = document.createElement("br");
+                let singlepost = document.createElement('div');
 
+                b.style.display = "block";
                 b.innerHTML = alldatas[key].title;
                 span.innerHTML = alldatas[key].content;
-                blockposts.appendChild(b);
+                singlepost.appendChild(b);
+                singlepost.appendChild(span);
+
+                blockposts.appendChild(singlepost);
                 blockposts.appendChild(br);
-                blockposts.appendChild(span);
             }
 
         });
