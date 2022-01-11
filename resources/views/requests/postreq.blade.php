@@ -28,14 +28,16 @@
     let btnsend = document.querySelector('.btnsend');
     let title = document.querySelector('.title');
     let content = document.querySelector('.content');
+    let token = document.getElementsByTagName('input')[0];
 
 
     btnsend.addEventListener("click", (e) => {
         e.preventDefault();
         console.log(title.value);
         console.log(content.value);
+        console.log(token.value);
 
-        const params = "title=" + title.value + "&content=" + content.value;
+        const params = "_token=" + token.value + "&title=" + title.value + "&content=" + content.value;
 
         var xhr = new XMLHttpRequest();
         const url = "{{ route('recpost') }}";
